@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "slide_two_cards",
+  "info": {
+    "singularName": "slide-two-card",
+    "pluralName": "slide-two-cards",
+    "displayName": "Slide Two Card"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "slide_six_icons",
+  "info": {
+    "singularName": "slide-six-icon",
+    "pluralName": "slide-six-icons",
+    "displayName": "Slide Six Icon"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "firstIcon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "secondIcon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

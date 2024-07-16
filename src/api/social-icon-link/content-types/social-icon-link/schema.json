@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "social_icon_links",
+  "info": {
+    "singularName": "social-icon-link",
+    "pluralName": "social-icon-links",
+    "displayName": "Social Icon Link"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

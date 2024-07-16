@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "footer_accordions",
+  "info": {
+    "singularName": "footer-accordion",
+    "pluralName": "footer-accordions",
+    "displayName": "Footer Accordion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

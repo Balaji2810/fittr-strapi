@@ -1,0 +1,208 @@
+{
+  "kind": "singleType",
+  "collectionName": "landing_pages",
+  "info": {
+    "singularName": "landing-page",
+    "pluralName": "landing-pages",
+    "displayName": "Landing Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slideOneTitle": {
+      "type": "string"
+    },
+    "slideTwoDescription": {
+      "type": "text"
+    },
+    "slideOneForegroundImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slideOneBackgroundImages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slideOnePurchaseBtnText": {
+      "type": "string"
+    },
+    "slideTwoTitle": {
+      "type": "string"
+    },
+    "slideTwoClockText": {
+      "type": "string"
+    },
+    "slideTwoCard": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::slide-two-card.slide-two-card"
+    },
+    "slideThreeTitle": {
+      "type": "string"
+    },
+    "slideThreeDescription": {
+      "type": "text"
+    },
+    "slideThreeCard": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::slide-three-card.slide-three-card"
+    },
+    "slideTwoBackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slideThreeBackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slideFourTitle": {
+      "type": "string"
+    },
+    "slideFourBackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slideFourLottieFile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slideFourCard": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::slide-four-card.slide-four-card"
+    },
+    "slideFiveTitle": {
+      "type": "string"
+    },
+    "slideFiveDescription": {
+      "type": "text"
+    },
+    "slideFiveCards": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slide-five-card.slide-five-card"
+    },
+    "slideFiveSmallCards": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slide-five-small-card.slide-five-small-card"
+    },
+    "slideSixTitle": {
+      "type": "string"
+    },
+    "slideSixDescription": {
+      "type": "text"
+    },
+    "slideSixPurchaseBtnText": {
+      "type": "string"
+    },
+    "slideSixCard": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::slide-six-card.slide-six-card"
+    },
+    "slideSixIcon": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slide-six-icon.slide-six-icon"
+    },
+    "slideSixBackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slideSevenTitle": {
+      "type": "string"
+    },
+    "slideSevenDescription": {
+      "type": "text"
+    },
+    "slideSevenLottieFile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slideSevenFeatures": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::specification.specification"
+    },
+    "slideSevenPurchaseBtnText": {
+      "type": "string"
+    },
+    "slideEightTitle": {
+      "type": "string"
+    },
+    "slideEightDescription": {
+      "type": "string"
+    },
+    "slideEightPurchaseBtnText": {
+      "type": "string"
+    },
+    "slideEightCards": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slide-eight-card.slide-eight-card"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
+    },
+    "slideOneDescription": {
+      "type": "text"
+    }
+  }
+}
