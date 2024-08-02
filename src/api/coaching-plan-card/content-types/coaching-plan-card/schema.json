@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coaching_plan_cards",
+  "info": {
+    "singularName": "coaching-plan-card",
+    "pluralName": "coaching-plan-cards",
+    "displayName": "Coaching Plan Card",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "billingType": {
+      "type": "string"
+    },
+    "billingDescription": {
+      "type": "string"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "titleLogo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "showCard": {
+      "type": "boolean"
+    },
+    "features": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::coaching-plan-feature.coaching-plan-feature"
+    }
+  }
+}

@@ -788,6 +788,260 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiCoachingPlanCardCoachingPlanCard
+  extends Schema.CollectionType {
+  collectionName: 'coaching_plan_cards';
+  info: {
+    singularName: 'coaching-plan-card';
+    pluralName: 'coaching-plan-cards';
+    displayName: 'Coaching Plan Card';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    price: Attribute.Integer;
+    billingType: Attribute.String;
+    billingDescription: Attribute.String;
+    backgroundImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    titleLogo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    showCard: Attribute.Boolean;
+    features: Attribute.Relation<
+      'api::coaching-plan-card.coaching-plan-card',
+      'oneToMany',
+      'api::coaching-plan-feature.coaching-plan-feature'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::coaching-plan-card.coaching-plan-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::coaching-plan-card.coaching-plan-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCoachingPlanCardTableCoachingPlanCardTable
+  extends Schema.CollectionType {
+  collectionName: 'coaching_plan_card_tables';
+  info: {
+    singularName: 'coaching-plan-card-table';
+    pluralName: 'coaching-plan-card-tables';
+    displayName: 'Coaching Plan Card Table';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    items: Attribute.Relation<
+      'api::coaching-plan-card-table.coaching-plan-card-table',
+      'oneToMany',
+      'api::coaching-plan-card-table-item.coaching-plan-card-table-item'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::coaching-plan-card-table.coaching-plan-card-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::coaching-plan-card-table.coaching-plan-card-table',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCoachingPlanCardTableItemCoachingPlanCardTableItem
+  extends Schema.CollectionType {
+  collectionName: 'coaching_plan_card_table_items';
+  info: {
+    singularName: 'coaching-plan-card-table-item';
+    pluralName: 'coaching-plan-card-table-items';
+    displayName: 'Coaching Plan Card Table Item';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    label: Attribute.String;
+    onlyRing: Attribute.Boolean;
+    ringAndCoaching: Attribute.Boolean;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::coaching-plan-card-table-item.coaching-plan-card-table-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::coaching-plan-card-table-item.coaching-plan-card-table-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCoachingPlanFeatureCoachingPlanFeature
+  extends Schema.CollectionType {
+  collectionName: 'coaching_plan_features';
+  info: {
+    singularName: 'coaching-plan-feature';
+    pluralName: 'coaching-plan-features';
+    displayName: 'Coaching Plan Feature';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    feature: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::coaching-plan-feature.coaching-plan-feature',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::coaching-plan-feature.coaching-plan-feature',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiConsumerProtectionConsumerProtection
+  extends Schema.CollectionType {
+  collectionName: 'consumer_protections';
+  info: {
+    singularName: 'consumer-protection';
+    pluralName: 'consumer-protections';
+    displayName: 'Consumer Protection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    cards: Attribute.Relation<
+      'api::consumer-protection.consumer-protection',
+      'oneToMany',
+      'api::consumer-protection-list.consumer-protection-list'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::consumer-protection.consumer-protection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::consumer-protection.consumer-protection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiConsumerProtectionListConsumerProtectionList
+  extends Schema.CollectionType {
+  collectionName: 'consumer_protection_lists';
+  info: {
+    singularName: 'consumer-protection-list';
+    pluralName: 'consumer-protection-lists';
+    displayName: 'Consumer Protection Card';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    items: Attribute.Relation<
+      'api::consumer-protection-list.consumer-protection-list',
+      'oneToMany',
+      'api::consumer-protection-list-item.consumer-protection-list-item'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::consumer-protection-list.consumer-protection-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::consumer-protection-list.consumer-protection-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiConsumerProtectionListItemConsumerProtectionListItem
+  extends Schema.CollectionType {
+  collectionName: 'consumer_protection_list_items';
+  info: {
+    singularName: 'consumer-protection-list-item';
+    pluralName: 'consumer-protection-list-items';
+    displayName: 'Consumer Protection List Item';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    label: Attribute.String;
+    icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::consumer-protection-list-item.consumer-protection-list-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::consumer-protection-list-item.consumer-protection-list-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Schema.CollectionType {
   collectionName: 'faqs';
   info: {
@@ -865,13 +1119,14 @@ export interface ApiFooterAccordionFooterAccordion
     singularName: 'footer-accordion';
     pluralName: 'footer-accordions';
     displayName: 'Footer Accordion';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
+    question: Attribute.String;
+    answer: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -896,6 +1151,7 @@ export interface ApiFooterLinkFooterLink extends Schema.CollectionType {
     singularName: 'footer-link';
     pluralName: 'footer-links';
     displayName: 'Footer Link';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -903,8 +1159,8 @@ export interface ApiFooterLinkFooterLink extends Schema.CollectionType {
   attributes: {
     heading: Attribute.String;
     tag: Attribute.String;
-    isExternal: Attribute.String;
     to: Attribute.String;
+    isExternal: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -936,88 +1192,86 @@ export interface ApiLandingPageLandingPage extends Schema.SingleType {
   };
   attributes: {
     slideOneTitle: Attribute.String;
-    slideTwoDescription: Attribute.Text;
+    slideThreeDescription: Attribute.Text;
     slideOneForegroundImages: Attribute.Media<'images', true>;
     slideOneBackgroundImages: Attribute.Media<'images', true>;
     slideOnePurchaseBtnText: Attribute.String;
-    slideTwoTitle: Attribute.String;
-    slideTwoClockText: Attribute.String;
-    slideTwoCard: Attribute.Relation<
-      'api::landing-page.landing-page',
-      'oneToOne',
-      'api::slide-two-card.slide-two-card'
-    >;
     slideThreeTitle: Attribute.String;
-    slideThreeDescription: Attribute.Text;
+    slideThreeClockText: Attribute.String;
     slideThreeCard: Attribute.Relation<
       'api::landing-page.landing-page',
       'oneToOne',
       'api::slide-three-card.slide-three-card'
     >;
-    slideTwoBackgroundImage: Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
+    slideFourTitle: Attribute.String;
+    slideFourDescription: Attribute.Text;
+    slideFourCard: Attribute.Relation<
+      'api::landing-page.landing-page',
+      'oneToOne',
+      'api::slide-4-card.slide-4-card'
     >;
     slideThreeBackgroundImage: Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    slideFourTitle: Attribute.String;
     slideFourBackgroundImage: Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    slideFourLottieFile: Attribute.Media<
+    slideFiveTitle: Attribute.String;
+    slideFiveBackgroundImage: Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    slideFourCard: Attribute.Relation<
+    slideFiveLottieFile: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    slideFiveCard: Attribute.Relation<
       'api::landing-page.landing-page',
       'oneToOne',
-      'api::slide-four-card.slide-four-card'
-    >;
-    slideFiveTitle: Attribute.String;
-    slideFiveDescription: Attribute.Text;
-    slideFiveCards: Attribute.Relation<
-      'api::landing-page.landing-page',
-      'oneToMany',
       'api::slide-five-card.slide-five-card'
-    >;
-    slideFiveSmallCards: Attribute.Relation<
-      'api::landing-page.landing-page',
-      'oneToMany',
-      'api::slide-five-small-card.slide-five-small-card'
     >;
     slideSixTitle: Attribute.String;
     slideSixDescription: Attribute.Text;
-    slideSixPurchaseBtnText: Attribute.String;
-    slideSixCard: Attribute.Relation<
-      'api::landing-page.landing-page',
-      'oneToOne',
-      'api::slide-six-card.slide-six-card'
-    >;
-    slideSixIcon: Attribute.Relation<
+    slideSixCards: Attribute.Relation<
       'api::landing-page.landing-page',
       'oneToMany',
-      'api::slide-six-icon.slide-six-icon'
+      'api::slide-six-card.slide-six-card'
     >;
-    slideSixBackgroundImage: Attribute.Media<
+    slideSixSmallCards: Attribute.Relation<
+      'api::landing-page.landing-page',
+      'oneToMany',
+      'api::slide-six-small-card.slide-six-small-card'
+    >;
+    slideSevenPurchaseBtnText: Attribute.String;
+    slideSevenCards: Attribute.Relation<
+      'api::landing-page.landing-page',
+      'oneToMany',
+      'api::slide-seven-card.slide-seven-card'
+    >;
+    slideSevenIcon: Attribute.Relation<
+      'api::landing-page.landing-page',
+      'oneToMany',
+      'api::slide-seven-icon.slide-seven-icon'
+    >;
+    slideSevenBackgroundImage: Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    slideSevenTitle: Attribute.String;
-    slideSevenDescription: Attribute.Text;
-    slideSevenLottieFile: Attribute.Media<
+    slideEightTitle: Attribute.String;
+    slideEightDescription: Attribute.Text;
+    slideEightLottieFile: Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    slideSevenFeatures: Attribute.Relation<
+    slideEightFeatures: Attribute.Relation<
       'api::landing-page.landing-page',
       'oneToMany',
       'api::specification.specification'
     >;
-    slideSevenPurchaseBtnText: Attribute.String;
-    slideEightTitle: Attribute.String;
-    slideEightDescription: Attribute.String;
     slideEightPurchaseBtnText: Attribute.String;
-    slideEightCards: Attribute.Relation<
+    slideTwoTitle: Attribute.String;
+    slideTwoDescription: Attribute.String;
+    slideTwoPurchaseBtnText: Attribute.String;
+    slideTwoCards: Attribute.Relation<
       'api::landing-page.landing-page',
       'oneToMany',
-      'api::slide-eight-card.slide-eight-card'
+      'api::slide-two-card.slide-two-card'
     >;
     faqs: Attribute.Relation<
       'api::landing-page.landing-page',
@@ -1025,6 +1279,38 @@ export interface ApiLandingPageLandingPage extends Schema.SingleType {
       'api::faq.faq'
     >;
     slideOneDescription: Attribute.Text;
+    slideThreeMobileBackgroundImage: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    slideFourMobileBackgroundImage: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    slideFiveMobileBackgroundImage: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    slideSevenMobileBackgroundImage: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    consumerProtection: Attribute.Relation<
+      'api::landing-page.landing-page',
+      'oneToOne',
+      'api::consumer-protection.consumer-protection'
+    >;
+    slideSevenTitles: Attribute.Relation<
+      'api::landing-page.landing-page',
+      'oneToMany',
+      'api::slide-seven-title.slide-seven-title'
+    >;
+    slideSevenDescriptions: Attribute.Relation<
+      'api::landing-page.landing-page',
+      'oneToMany',
+      'api::slide-seven-description.slide-seven-description'
+    >;
+    slideFourSmallCards: Attribute.Relation<
+      'api::landing-page.landing-page',
+      'oneToMany',
+      'api::slide-4-small-card.slide-4-small-card'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1043,12 +1329,50 @@ export interface ApiLandingPageLandingPage extends Schema.SingleType {
   };
 }
 
-export interface ApiSlideEightCardSlideEightCard extends Schema.CollectionType {
-  collectionName: 'slide_eight_cards';
+export interface ApiMeasureWithFingerGuideMeasureWithFingerGuide
+  extends Schema.CollectionType {
+  collectionName: 'measure_with_finger_guides';
   info: {
-    singularName: 'slide-eight-card';
-    pluralName: 'slide-eight-cards';
-    displayName: 'Slide Eight Card';
+    singularName: 'measure-with-finger-guide';
+    pluralName: 'measure-with-finger-guides';
+    displayName: 'Measure With Finger Guide';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    measureWithFingerSteps: Attribute.Relation<
+      'api::measure-with-finger-guide.measure-with-finger-guide',
+      'oneToMany',
+      'api::measure-with-finger-step.measure-with-finger-step'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::measure-with-finger-guide.measure-with-finger-guide',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::measure-with-finger-guide.measure-with-finger-guide',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMeasureWithFingerStepMeasureWithFingerStep
+  extends Schema.CollectionType {
+  collectionName: 'measure_with_finger_steps';
+  info: {
+    singularName: 'measure-with-finger-step';
+    pluralName: 'measure-with-finger-steps';
+    displayName: 'Measure With Finger Step';
   };
   options: {
     draftAndPublish: true;
@@ -1057,17 +1381,377 @@ export interface ApiSlideEightCardSlideEightCard extends Schema.CollectionType {
     title: Attribute.String;
     description: Attribute.Text;
     media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    measure_with_finger_guide: Attribute.Relation<
+      'api::measure-with-finger-step.measure-with-finger-step',
+      'manyToOne',
+      'api::measure-with-finger-guide.measure-with-finger-guide'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::slide-eight-card.slide-eight-card',
+      'api::measure-with-finger-step.measure-with-finger-step',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::slide-eight-card.slide-eight-card',
+      'api::measure-with-finger-step.measure-with-finger-step',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPhysicalSizingCardPhysicalSizingCard
+  extends Schema.CollectionType {
+  collectionName: 'physical_sizing_cards';
+  info: {
+    singularName: 'physical-sizing-card';
+    pluralName: 'physical-sizing-cards';
+    displayName: 'Physical Sizing Card';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.String;
+    buttonText: Attribute.String;
+    showCard: Attribute.Boolean;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::physical-sizing-card.physical-sizing-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::physical-sizing-card.physical-sizing-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPolicyPolicy extends Schema.SingleType {
+  collectionName: 'policies';
+  info: {
+    singularName: 'policy';
+    pluralName: 'policies';
+    displayName: 'policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    updated_on: Attribute.String;
+    content: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::policy.policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::policy.policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProductPageProductPage extends Schema.SingleType {
+  collectionName: 'product_pages';
+  info: {
+    singularName: 'product-page';
+    pluralName: 'product-pages';
+    displayName: 'Product Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    coachingPlanCard: Attribute.Relation<
+      'api::product-page.product-page',
+      'oneToOne',
+      'api::coaching-plan-card.coaching-plan-card'
+    >;
+    featureIcons: Attribute.Relation<
+      'api::product-page.product-page',
+      'oneToMany',
+      'api::product-page-feature-icon.product-page-feature-icon'
+    >;
+    threeSixtyModel: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    physicalSizingCard: Attribute.Relation<
+      'api::product-page.product-page',
+      'oneToOne',
+      'api::physical-sizing-card.physical-sizing-card'
+    >;
+    ringImages: Attribute.Relation<
+      'api::product-page.product-page',
+      'oneToMany',
+      'api::product-page-ring-media.product-page-ring-media'
+    >;
+    recentlySold: Attribute.Relation<
+      'api::product-page.product-page',
+      'oneToOne',
+      'api::product-page-recently-sold-tip.product-page-recently-sold-tip'
+    >;
+    coachingPlanTable: Attribute.Relation<
+      'api::product-page.product-page',
+      'oneToOne',
+      'api::coaching-plan-card-table.coaching-plan-card-table'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product-page.product-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product-page.product-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProductPageFeatureIconProductPageFeatureIcon
+  extends Schema.CollectionType {
+  collectionName: 'product_page_feature_icons';
+  info: {
+    singularName: 'product-page-feature-icon';
+    pluralName: 'product-page-feature-icons';
+    displayName: 'Product Page Feature Icon';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product-page-feature-icon.product-page-feature-icon',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product-page-feature-icon.product-page-feature-icon',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProductPageRecentlySoldTipProductPageRecentlySoldTip
+  extends Schema.CollectionType {
+  collectionName: 'product_page_recently_sold_tips';
+  info: {
+    singularName: 'product-page-recently-sold-tip';
+    pluralName: 'product-page-recently-sold-tips';
+    displayName: 'Product Page Recently Sold Tip';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product-page-recently-sold-tip.product-page-recently-sold-tip',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product-page-recently-sold-tip.product-page-recently-sold-tip',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProductPageRingColorListProductPageRingColorList
+  extends Schema.CollectionType {
+  collectionName: 'product_page_ring_color_lists';
+  info: {
+    singularName: 'product-page-ring-color-list';
+    pluralName: 'product-page-ring-color-lists';
+    displayName: 'Product Page Ring Color List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    colorName: Attribute.String;
+    colorHex: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product-page-ring-color-list.product-page-ring-color-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product-page-ring-color-list.product-page-ring-color-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProductPageRingMediaProductPageRingMedia
+  extends Schema.CollectionType {
+  collectionName: 'product_page_ring_medias';
+  info: {
+    singularName: 'product-page-ring-media';
+    pluralName: 'product-page-ring-medias';
+    displayName: 'Product Page Ring Media';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    colorName: Attribute.String;
+    colorCode: Attribute.String;
+    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product-page-ring-media.product-page-ring-media',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product-page-ring-media.product-page-ring-media',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRingSizeRingSize extends Schema.CollectionType {
+  collectionName: 'ring_sizes';
+  info: {
+    singularName: 'ring-size';
+    pluralName: 'ring-sizes';
+    displayName: 'Ring Size';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    size: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ring-size.ring-size',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ring-size.ring-size',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSlide4CardSlide4Card extends Schema.CollectionType {
+  collectionName: 'slide-4-cards';
+  info: {
+    singularName: 'slide-4-card';
+    pluralName: 'slide-4-cards';
+    displayName: 'Slide Four Card';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    titleHex: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::slide-4-card.slide-4-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::slide-4-card.slide-4-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSlide4SmallCardSlide4SmallCard
+  extends Schema.CollectionType {
+  collectionName: 'slide-4-small-cards';
+  info: {
+    singularName: 'slide-4-small-card';
+    pluralName: 'slide-4-small-cards';
+    displayName: 'Slide Four Small Cards';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.String;
+    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::slide-4-small-card.slide-4-small-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::slide-4-small-card.slide-4-small-card',
       'oneToOne',
       'admin::user'
     > &
@@ -1081,15 +1765,16 @@ export interface ApiSlideFiveCardSlideFiveCard extends Schema.CollectionType {
     singularName: 'slide-five-card';
     pluralName: 'slide-five-cards';
     displayName: 'Slide Five Card';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
-    cardNo: Attribute.Integer;
     description: Attribute.Text;
     media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    titleHex: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1108,32 +1793,63 @@ export interface ApiSlideFiveCardSlideFiveCard extends Schema.CollectionType {
   };
 }
 
-export interface ApiSlideFiveSmallCardSlideFiveSmallCard
+export interface ApiSlideSevenCardSlideSevenCard extends Schema.CollectionType {
+  collectionName: 'slide_seven_cards';
+  info: {
+    singularName: 'slide-seven-card';
+    pluralName: 'slide-seven-cards';
+    displayName: 'Slide Seven Card';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    subTitle: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::slide-seven-card.slide-seven-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::slide-seven-card.slide-seven-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSlideSevenDescriptionSlideSevenDescription
   extends Schema.CollectionType {
-  collectionName: 'slide_five_small_cards';
+  collectionName: 'slide_seven_descriptions';
   info: {
-    singularName: 'slide-five-small-card';
-    pluralName: 'slide-five-small-cards';
-    displayName: 'Slide Five Small Card';
+    singularName: 'slide-seven-description';
+    pluralName: 'slide-seven-descriptions';
+    displayName: 'Slide Seven Description';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
     description: Attribute.Text;
-    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::slide-five-small-card.slide-five-small-card',
+      'api::slide-seven-description.slide-seven-description',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::slide-five-small-card.slide-five-small-card',
+      'api::slide-seven-description.slide-seven-description',
       'oneToOne',
       'admin::user'
     > &
@@ -1141,31 +1857,63 @@ export interface ApiSlideFiveSmallCardSlideFiveSmallCard
   };
 }
 
-export interface ApiSlideFourCardSlideFourCard extends Schema.CollectionType {
-  collectionName: 'slide_four_cards';
+export interface ApiSlideSevenIconSlideSevenIcon extends Schema.CollectionType {
+  collectionName: 'slide_seven_icons';
   info: {
-    singularName: 'slide-four-card';
-    pluralName: 'slide-four-cards';
-    displayName: 'Slide Four Card';
+    singularName: 'slide-seven-icon';
+    pluralName: 'slide-seven-icons';
+    displayName: 'Slide Seven Icon';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.Text;
-    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    initialImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    finalImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::slide-four-card.slide-four-card',
+      'api::slide-seven-icon.slide-seven-icon',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::slide-four-card.slide-four-card',
+      'api::slide-seven-icon.slide-seven-icon',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSlideSevenTitleSlideSevenTitle
+  extends Schema.CollectionType {
+  collectionName: 'slide_seven_titles';
+  info: {
+    singularName: 'slide-seven-title';
+    pluralName: 'slide-seven-titles';
+    displayName: 'Slide Seven Title';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::slide-seven-title.slide-seven-title',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::slide-seven-title.slide-seven-title',
       'oneToOne',
       'admin::user'
     > &
@@ -1185,9 +1933,9 @@ export interface ApiSlideSixCardSlideSixCard extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String;
+    cardNo: Attribute.Integer;
     description: Attribute.Text;
     media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    subTitle: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1206,31 +1954,32 @@ export interface ApiSlideSixCardSlideSixCard extends Schema.CollectionType {
   };
 }
 
-export interface ApiSlideSixIconSlideSixIcon extends Schema.CollectionType {
-  collectionName: 'slide_six_icons';
+export interface ApiSlideSixSmallCardSlideSixSmallCard
+  extends Schema.CollectionType {
+  collectionName: 'slide_six_small_cards';
   info: {
-    singularName: 'slide-six-icon';
-    pluralName: 'slide-six-icons';
-    displayName: 'Slide Six Icon';
+    singularName: 'slide-six-small-card';
+    pluralName: 'slide-six-small-cards';
+    displayName: 'Slide Six Small Card';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
-    firstIcon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    secondIcon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description: Attribute.Text;
+    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::slide-six-icon.slide-six-icon',
+      'api::slide-six-small-card.slide-six-small-card',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::slide-six-icon.slide-six-icon',
+      'api::slide-six-small-card.slide-six-small-card',
       'oneToOne',
       'admin::user'
     > &
@@ -1244,14 +1993,16 @@ export interface ApiSlideThreeCardSlideThreeCard extends Schema.CollectionType {
     singularName: 'slide-three-card';
     pluralName: 'slide-three-cards';
     displayName: 'Slide Three Card';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.Text;
+    description: Attribute.String;
     media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    titleHex: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1276,14 +2027,17 @@ export interface ApiSlideTwoCardSlideTwoCard extends Schema.CollectionType {
     singularName: 'slide-two-card';
     pluralName: 'slide-two-cards';
     displayName: 'Slide Two Card';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.String;
+    description: Attribute.Text;
     media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    comment: Attribute.Text;
+    feedback: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1339,7 +2093,7 @@ export interface ApiSpecificationSpecification extends Schema.CollectionType {
   info: {
     singularName: 'specification';
     pluralName: 'specifications';
-    displayName: 'Slide Seven Specification';
+    displayName: 'Slide Eight Specification';
     description: '';
   };
   options: {
@@ -1368,6 +2122,150 @@ export interface ApiSpecificationSpecification extends Schema.CollectionType {
   };
 }
 
+export interface ApiTermsAndConditionTermsAndCondition
+  extends Schema.SingleType {
+  collectionName: 'terms_and_conditions';
+  info: {
+    singularName: 'terms-and-condition';
+    pluralName: 'terms-and-conditions';
+    displayName: 'Terms and Condition';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Attribute.Blocks;
+    updated_on: Attribute.String;
+    title: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::terms-and-condition.terms-and-condition',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::terms-and-condition.terms-and-condition',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWarrantyCardWarrantyCard extends Schema.CollectionType {
+  collectionName: 'warranty_cards';
+  info: {
+    singularName: 'warranty-card';
+    pluralName: 'warranty-cards';
+    displayName: 'Warranty Card';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    heading: Attribute.String;
+    largeHeading: Attribute.String;
+    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::warranty-card.warranty-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::warranty-card.warranty-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWarrantyPolicyWarrantyPolicy extends Schema.SingleType {
+  collectionName: 'warranty_policies';
+  info: {
+    singularName: 'warranty-policy';
+    pluralName: 'warranty-policies';
+    displayName: 'Warranty Policy';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    updatedOn: Attribute.String;
+    warrantyCard: Attribute.Relation<
+      'api::warranty-policy.warranty-policy',
+      'oneToOne',
+      'api::warranty-card.warranty-card'
+    >;
+    warrantyPolicySmallCards: Attribute.Relation<
+      'api::warranty-policy.warranty-policy',
+      'oneToMany',
+      'api::warranty-policy-small-card.warranty-policy-small-card'
+    >;
+    content: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::warranty-policy.warranty-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::warranty-policy.warranty-policy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWarrantyPolicySmallCardWarrantyPolicySmallCard
+  extends Schema.CollectionType {
+  collectionName: 'warranty_policy_small_cards';
+  info: {
+    singularName: 'warranty-policy-small-card';
+    pluralName: 'warranty-policy-small-cards';
+    displayName: 'Warranty Policy Small Card';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Attribute.String;
+    description: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::warranty-policy-small-card.warranty-policy-small-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::warranty-policy-small-card.warranty-policy-small-card',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1386,21 +2284,45 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::coaching-plan-card.coaching-plan-card': ApiCoachingPlanCardCoachingPlanCard;
+      'api::coaching-plan-card-table.coaching-plan-card-table': ApiCoachingPlanCardTableCoachingPlanCardTable;
+      'api::coaching-plan-card-table-item.coaching-plan-card-table-item': ApiCoachingPlanCardTableItemCoachingPlanCardTableItem;
+      'api::coaching-plan-feature.coaching-plan-feature': ApiCoachingPlanFeatureCoachingPlanFeature;
+      'api::consumer-protection.consumer-protection': ApiConsumerProtectionConsumerProtection;
+      'api::consumer-protection-list.consumer-protection-list': ApiConsumerProtectionListConsumerProtectionList;
+      'api::consumer-protection-list-item.consumer-protection-list-item': ApiConsumerProtectionListItemConsumerProtectionListItem;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::footer-accordion.footer-accordion': ApiFooterAccordionFooterAccordion;
       'api::footer-link.footer-link': ApiFooterLinkFooterLink;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
-      'api::slide-eight-card.slide-eight-card': ApiSlideEightCardSlideEightCard;
+      'api::measure-with-finger-guide.measure-with-finger-guide': ApiMeasureWithFingerGuideMeasureWithFingerGuide;
+      'api::measure-with-finger-step.measure-with-finger-step': ApiMeasureWithFingerStepMeasureWithFingerStep;
+      'api::physical-sizing-card.physical-sizing-card': ApiPhysicalSizingCardPhysicalSizingCard;
+      'api::policy.policy': ApiPolicyPolicy;
+      'api::product-page.product-page': ApiProductPageProductPage;
+      'api::product-page-feature-icon.product-page-feature-icon': ApiProductPageFeatureIconProductPageFeatureIcon;
+      'api::product-page-recently-sold-tip.product-page-recently-sold-tip': ApiProductPageRecentlySoldTipProductPageRecentlySoldTip;
+      'api::product-page-ring-color-list.product-page-ring-color-list': ApiProductPageRingColorListProductPageRingColorList;
+      'api::product-page-ring-media.product-page-ring-media': ApiProductPageRingMediaProductPageRingMedia;
+      'api::ring-size.ring-size': ApiRingSizeRingSize;
+      'api::slide-4-card.slide-4-card': ApiSlide4CardSlide4Card;
+      'api::slide-4-small-card.slide-4-small-card': ApiSlide4SmallCardSlide4SmallCard;
       'api::slide-five-card.slide-five-card': ApiSlideFiveCardSlideFiveCard;
-      'api::slide-five-small-card.slide-five-small-card': ApiSlideFiveSmallCardSlideFiveSmallCard;
-      'api::slide-four-card.slide-four-card': ApiSlideFourCardSlideFourCard;
+      'api::slide-seven-card.slide-seven-card': ApiSlideSevenCardSlideSevenCard;
+      'api::slide-seven-description.slide-seven-description': ApiSlideSevenDescriptionSlideSevenDescription;
+      'api::slide-seven-icon.slide-seven-icon': ApiSlideSevenIconSlideSevenIcon;
+      'api::slide-seven-title.slide-seven-title': ApiSlideSevenTitleSlideSevenTitle;
       'api::slide-six-card.slide-six-card': ApiSlideSixCardSlideSixCard;
-      'api::slide-six-icon.slide-six-icon': ApiSlideSixIconSlideSixIcon;
+      'api::slide-six-small-card.slide-six-small-card': ApiSlideSixSmallCardSlideSixSmallCard;
       'api::slide-three-card.slide-three-card': ApiSlideThreeCardSlideThreeCard;
       'api::slide-two-card.slide-two-card': ApiSlideTwoCardSlideTwoCard;
       'api::social-icon-link.social-icon-link': ApiSocialIconLinkSocialIconLink;
       'api::specification.specification': ApiSpecificationSpecification;
+      'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
+      'api::warranty-card.warranty-card': ApiWarrantyCardWarrantyCard;
+      'api::warranty-policy.warranty-policy': ApiWarrantyPolicyWarrantyPolicy;
+      'api::warranty-policy-small-card.warranty-policy-small-card': ApiWarrantyPolicySmallCardWarrantyPolicySmallCard;
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "slide-two-card",
     "pluralName": "slide-two-cards",
-    "displayName": "Slide Two Card"
+    "displayName": "Slide Two Card",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,17 +16,24 @@
       "type": "string"
     },
     "description": {
-      "type": "string"
+      "type": "text"
     },
     "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "comment": {
+      "type": "text"
+    },
+    "feedback": {
+      "type": "text"
     }
   }
 }

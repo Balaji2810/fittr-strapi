@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coaching_plan_card_table_items",
+  "info": {
+    "singularName": "coaching-plan-card-table-item",
+    "pluralName": "coaching-plan-card-table-items",
+    "displayName": "Coaching Plan Card Table Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "onlyRing": {
+      "type": "boolean"
+    },
+    "ringAndCoaching": {
+      "type": "boolean"
+    }
+  }
+}

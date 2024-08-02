@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "slide_seven_titles",
+  "info": {
+    "singularName": "slide-seven-title",
+    "pluralName": "slide-seven-titles",
+    "displayName": "Slide Seven Title"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "physical_sizing_cards",
+  "info": {
+    "singularName": "physical-sizing-card",
+    "pluralName": "physical-sizing-cards",
+    "displayName": "Physical Sizing Card"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "buttonText": {
+      "type": "string"
+    },
+    "showCard": {
+      "type": "boolean"
+    }
+  }
+}

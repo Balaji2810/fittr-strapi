@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "slide_seven_icons",
+  "info": {
+    "singularName": "slide-seven-icon",
+    "pluralName": "slide-seven-icons",
+    "displayName": "Slide Seven Icon",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "initialImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "finalImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

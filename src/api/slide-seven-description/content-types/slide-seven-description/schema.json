@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "slide_seven_descriptions",
+  "info": {
+    "singularName": "slide-seven-description",
+    "pluralName": "slide-seven-descriptions",
+    "displayName": "Slide Seven Description"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    }
+  }
+}

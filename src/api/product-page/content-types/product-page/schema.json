@@ -1,0 +1,60 @@
+{
+  "kind": "singleType",
+  "collectionName": "product_pages",
+  "info": {
+    "singularName": "product-page",
+    "pluralName": "product-pages",
+    "displayName": "Product Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "coachingPlanCard": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::coaching-plan-card.coaching-plan-card"
+    },
+    "featureIcons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-page-feature-icon.product-page-feature-icon"
+    },
+    "threeSixtyModel": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "physicalSizingCard": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::physical-sizing-card.physical-sizing-card"
+    },
+    "ringImages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-page-ring-media.product-page-ring-media"
+    },
+    "recentlySold": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-page-recently-sold-tip.product-page-recently-sold-tip"
+    },
+    "coachingPlanTable": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::coaching-plan-card-table.coaching-plan-card-table"
+    }
+  }
+}

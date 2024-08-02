@@ -4,7 +4,8 @@
   "info": {
     "singularName": "slide-five-card",
     "pluralName": "slide-five-cards",
-    "displayName": "Slide Five Card"
+    "displayName": "Slide Five Card",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,21 +15,22 @@
     "title": {
       "type": "string"
     },
-    "cardNo": {
-      "type": "integer"
-    },
     "description": {
       "type": "text"
     },
     "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "titleHex": {
+      "type": "string"
     }
   }
 }

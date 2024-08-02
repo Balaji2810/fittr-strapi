@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_page_ring_color_lists",
+  "info": {
+    "singularName": "product-page-ring-color-list",
+    "pluralName": "product-page-ring-color-lists",
+    "displayName": "Product Page Ring Color List"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "colorName": {
+      "type": "string"
+    },
+    "colorHex": {
+      "type": "string"
+    }
+  }
+}

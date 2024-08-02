@@ -4,7 +4,8 @@
   "info": {
     "singularName": "footer-link",
     "pluralName": "footer-links",
-    "displayName": "Footer Link"
+    "displayName": "Footer Link",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,11 +18,11 @@
     "tag": {
       "type": "string"
     },
-    "isExternal": {
-      "type": "string"
-    },
     "to": {
       "type": "string"
+    },
+    "isExternal": {
+      "type": "boolean"
     }
   }
 }

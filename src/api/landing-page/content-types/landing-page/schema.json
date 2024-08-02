@@ -15,7 +15,7 @@
     "slideOneTitle": {
       "type": "string"
     },
-    "slideTwoDescription": {
+    "slideThreeDescription": {
       "type": "text"
     },
     "slideOneForegroundImages": {
@@ -37,38 +37,27 @@
     "slideOnePurchaseBtnText": {
       "type": "string"
     },
-    "slideTwoTitle": {
-      "type": "string"
-    },
-    "slideTwoClockText": {
-      "type": "string"
-    },
-    "slideTwoCard": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::slide-two-card.slide-two-card"
-    },
     "slideThreeTitle": {
       "type": "string"
     },
-    "slideThreeDescription": {
-      "type": "text"
+    "slideThreeClockText": {
+      "type": "string"
     },
     "slideThreeCard": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::slide-three-card.slide-three-card"
     },
-    "slideTwoBackgroundImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "slideFourTitle": {
+      "type": "string"
+    },
+    "slideFourDescription": {
+      "type": "text"
+    },
+    "slideFourCard": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::slide-4-card.slide-4-card"
     },
     "slideThreeBackgroundImage": {
       "type": "media",
@@ -81,9 +70,6 @@
         "audios"
       ]
     },
-    "slideFourTitle": {
-      "type": "string"
-    },
     "slideFourBackgroundImage": {
       "type": "media",
       "multiple": false,
@@ -95,7 +81,10 @@
         "audios"
       ]
     },
-    "slideFourLottieFile": {
+    "slideFiveTitle": {
+      "type": "string"
+    },
+    "slideFiveBackgroundImage": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -106,26 +95,21 @@
         "audios"
       ]
     },
-    "slideFourCard": {
+    "slideFiveLottieFile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slideFiveCard": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::slide-four-card.slide-four-card"
-    },
-    "slideFiveTitle": {
-      "type": "string"
-    },
-    "slideFiveDescription": {
-      "type": "text"
-    },
-    "slideFiveCards": {
-      "type": "relation",
-      "relation": "oneToMany",
       "target": "api::slide-five-card.slide-five-card"
-    },
-    "slideFiveSmallCards": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::slide-five-small-card.slide-five-small-card"
     },
     "slideSixTitle": {
       "type": "string"
@@ -133,68 +117,78 @@
     "slideSixDescription": {
       "type": "text"
     },
-    "slideSixPurchaseBtnText": {
-      "type": "string"
-    },
-    "slideSixCard": {
+    "slideSixCards": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::slide-six-card.slide-six-card"
     },
-    "slideSixIcon": {
+    "slideSixSmallCards": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::slide-six-icon.slide-six-icon"
-    },
-    "slideSixBackgroundImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "slideSevenTitle": {
-      "type": "string"
-    },
-    "slideSevenDescription": {
-      "type": "text"
-    },
-    "slideSevenLottieFile": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "slideSevenFeatures": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::specification.specification"
+      "target": "api::slide-six-small-card.slide-six-small-card"
     },
     "slideSevenPurchaseBtnText": {
       "type": "string"
+    },
+    "slideSevenCards": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slide-seven-card.slide-seven-card"
+    },
+    "slideSevenIcon": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slide-seven-icon.slide-seven-icon"
+    },
+    "slideSevenBackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "slideEightTitle": {
       "type": "string"
     },
     "slideEightDescription": {
-      "type": "string"
+      "type": "text"
+    },
+    "slideEightLottieFile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slideEightFeatures": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::specification.specification"
     },
     "slideEightPurchaseBtnText": {
       "type": "string"
     },
-    "slideEightCards": {
+    "slideTwoTitle": {
+      "type": "string"
+    },
+    "slideTwoDescription": {
+      "type": "string"
+    },
+    "slideTwoPurchaseBtnText": {
+      "type": "string"
+    },
+    "slideTwoCards": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::slide-eight-card.slide-eight-card"
+      "target": "api::slide-two-card.slide-two-card"
     },
     "faqs": {
       "type": "relation",
@@ -203,6 +197,70 @@
     },
     "slideOneDescription": {
       "type": "text"
+    },
+    "slideThreeMobileBackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slideFourMobileBackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slideFiveMobileBackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slideSevenMobileBackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "consumerProtection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::consumer-protection.consumer-protection"
+    },
+    "slideSevenTitles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slide-seven-title.slide-seven-title"
+    },
+    "slideSevenDescriptions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slide-seven-description.slide-seven-description"
+    },
+    "slideFourSmallCards": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slide-4-small-card.slide-4-small-card"
     }
   }
 }

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coaching_plan_card_tables",
+  "info": {
+    "singularName": "coaching-plan-card-table",
+    "pluralName": "coaching-plan-card-tables",
+    "displayName": "Coaching Plan Card Table",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::coaching-plan-card-table-item.coaching-plan-card-table-item"
+    }
+  }
+}

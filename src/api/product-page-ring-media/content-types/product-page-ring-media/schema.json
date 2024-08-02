@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_page_ring_medias",
+  "info": {
+    "singularName": "product-page-ring-media",
+    "pluralName": "product-page-ring-medias",
+    "displayName": "Product Page Ring Media",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "colorName": {
+      "type": "string"
+    },
+    "colorCode": {
+      "type": "string"
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

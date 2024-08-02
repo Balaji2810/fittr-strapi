@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "warranty_policy_small_cards",
+  "info": {
+    "singularName": "warranty-policy-small-card",
+    "pluralName": "warranty-policy-small-cards",
+    "displayName": "Warranty Policy Small Card",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

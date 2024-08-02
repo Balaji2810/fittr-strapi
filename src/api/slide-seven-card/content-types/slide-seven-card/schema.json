@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "slide_seven_cards",
+  "info": {
+    "singularName": "slide-seven-card",
+    "pluralName": "slide-seven-cards",
+    "displayName": "Slide Seven Card"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "subTitle": {
+      "type": "string"
+    }
+  }
+}

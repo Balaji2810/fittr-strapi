@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coaching_plan_features",
+  "info": {
+    "singularName": "coaching-plan-feature",
+    "pluralName": "coaching-plan-features",
+    "displayName": "Coaching Plan Feature",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "feature": {
+      "type": "string"
+    }
+  }
+}

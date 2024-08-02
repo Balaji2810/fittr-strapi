@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "consumer_protection_list_items",
+  "info": {
+    "singularName": "consumer-protection-list-item",
+    "pluralName": "consumer-protection-list-items",
+    "displayName": "Consumer Protection List Item"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

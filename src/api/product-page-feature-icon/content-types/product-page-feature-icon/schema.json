@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_page_feature_icons",
+  "info": {
+    "singularName": "product-page-feature-icon",
+    "pluralName": "product-page-feature-icons",
+    "displayName": "Product Page Feature Icon"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

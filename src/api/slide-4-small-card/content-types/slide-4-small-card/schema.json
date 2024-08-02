@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "slide-4-small-cards",
+  "info": {
+    "singularName": "slide-4-small-card",
+    "pluralName": "slide-4-small-cards",
+    "displayName": "Slide Four Small Cards",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

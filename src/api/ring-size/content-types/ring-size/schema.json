@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ring_sizes",
+  "info": {
+    "singularName": "ring-size",
+    "pluralName": "ring-sizes",
+    "displayName": "Ring Size"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "size": {
+      "type": "integer"
+    }
+  }
+}

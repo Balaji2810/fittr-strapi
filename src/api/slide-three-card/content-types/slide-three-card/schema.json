@@ -4,7 +4,8 @@
   "info": {
     "singularName": "slide-three-card",
     "pluralName": "slide-three-cards",
-    "displayName": "Slide Three Card"
+    "displayName": "Slide Three Card",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,17 +16,21 @@
       "type": "string"
     },
     "description": {
-      "type": "text"
+      "type": "string"
     },
     "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "titleHex": {
+      "type": "string"
     }
   }
 }

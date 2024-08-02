@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "measure_with_finger_guides",
+  "info": {
+    "singularName": "measure-with-finger-guide",
+    "pluralName": "measure-with-finger-guides",
+    "displayName": "Measure With Finger Guide"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "measureWithFingerSteps": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::measure-with-finger-step.measure-with-finger-step",
+      "mappedBy": "measure_with_finger_guide"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "consumer_protections",
+  "info": {
+    "singularName": "consumer-protection",
+    "pluralName": "consumer-protections",
+    "displayName": "Consumer Protection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cards": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::consumer-protection-list.consumer-protection-list"
+    }
+  }
+}

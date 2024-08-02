@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "measure_with_finger_steps",
+  "info": {
+    "singularName": "measure-with-finger-step",
+    "pluralName": "measure-with-finger-steps",
+    "displayName": "Measure With Finger Step"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "measure_with_finger_guide": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::measure-with-finger-guide.measure-with-finger-guide",
+      "inversedBy": "measureWithFingerSteps"
+    }
+  }
+}

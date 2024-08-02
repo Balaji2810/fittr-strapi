@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_page_recently_sold_tips",
+  "info": {
+    "singularName": "product-page-recently-sold-tip",
+    "pluralName": "product-page-recently-sold-tips",
+    "displayName": "Product Page Recently Sold Tip"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
